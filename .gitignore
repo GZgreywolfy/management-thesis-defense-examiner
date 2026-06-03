@@ -1,0 +1,15 @@
+# 原始答辩素材,严禁上传
+*.pdf
+*.txt
+*.docx
+*.doc
+*.mp3
+*.wav
+*.m4a
+/原始记录/
+/raw/
+
+# 常见系统与编辑器文件
+.DS_Store
+.vscode/
+.idea/
