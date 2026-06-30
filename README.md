@@ -2,6 +2,8 @@
 
 # 管理学院毕业论文模拟答辩评委 Skill
 
+> **💡 什么是 Skill？** Skill 是 AI 的系统提示词（System Prompt），它定义了 AI 的角色、行为和知识范围。本仓库的 SKILL.md 就是一个精心设计的提示词文件，你只需将它粘贴到 ChatGPT、Claude 等大模型里，即可让 AI 化身为专业的毕业论文答辩评委。
+
 一个用于让 AI 扮演"毕业论文答辩评委"的 Prompt Skill，帮助学生在盲审/外审前自查论文的理论根基、研究设计、方法严谨性与学术规范。
 
 ---
@@ -17,6 +19,33 @@
 - 🔄 **多平台兼容** — SKILL.md 可直接用于 ChatGPT、Claude、Kimi、DeepSeek 等主流大模型
 - 🧪 **模拟对话示例** — 提供完整的虚构答辩对话参考，快速上手
 
+```
+答辩评委评审流程示意：
+
+ ┌─────────────────────────────────────────────────────────┐
+ │  您提交论文摘要/模型/陈述                                 │
+ │         │                                                 │
+ │         ▼                                                 │
+ │  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐   │
+ │  │ ① 理论根基  │ →  │ ② 模型设定  │ →  │ ③ 变量量表  │   │
+ │  │ 核心理论推导 │    │ 函数形式选择 │    │ 测量工具效度 │   │
+ │  └─────────────┘    └─────────────┘    └─────────────┘   │
+ │         │                                                 │
+ │         ▼                                                 │
+ │  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐   │
+ │  │ ④ 研究设计  │ →  │ ⑤ 学术表达  │ →  │ ⑥ 灵魂拷问  │   │
+ │  │ 方法严谨性   │    │ 格式规范性   │    │ 实践价值追问  │   │
+ │  └─────────────┘    └─────────────┘    └─────────────┘   │
+ │         │                                                 │
+ │         ▼                                                 │
+ │  ┌──────────────────────────────────────────────────┐     │
+ │  │     输出：五维修改清单 + 致命项提醒              │     │
+ │  └──────────────────────────────────────────────────┘     │
+ └─────────────────────────────────────────────────────────┘
+
+ 每轮只抛 1-2 个最关键问题 → 等待回应 → 追问或转入下一维度
+```
+
 ---
 
 ## 🚀 快速开始
@@ -26,7 +55,7 @@
 克隆或下载本仓库，找到 `SKILL.md` 文件。
 
 ```bash
-git clone https://github.com/greywolfy/management-thesis-defense-examiner.git
+git clone https://github.com/GZgreywolfy/management-thesis-defense-examiner.git
 ```
 
 ### 第二步：作为 System Prompt 喂给 AI
@@ -103,6 +132,39 @@ management-thesis-defense-examiner/
 
 ---
 
+## 🛠️ 辅助脚本：replace_authors.py
+
+本仓库提供了一个 Python 辅助脚本 `replace_authors.py`，用于批量替换 Markdown 文件中的占位作者名，方便你在使用示例对话或提问库时将其中的虚构作者名替换为你自己的名字。
+
+### 使用方法
+
+```bash
+# 查看所有可替换的占位符
+python replace_authors.py --check
+
+# 将所有占位作者名替换为指定姓名
+python replace_authors.py --replace "张三"
+
+# 仅替换指定文件中的占位符
+python replace_authors.py --replace "李四" --file examples/sample-dialogue.md
+
+# 将替换后的文件输出到指定目录（不修改原文件）
+python replace_authors.py --replace "王五" --output-dir ./output
+```
+
+### 参数说明
+
+| 参数 | 说明 | 必需 |
+|------|------|------|
+| `--replace` | 指定要替换为的真实姓名 | 是（与 `--check` 二选一） |
+| `--check` | 仅检查并列出所有占位符，不执行替换 | 是（与 `--replace` 二选一） |
+| `--file` | 指定要处理的单个文件路径（默认处理所有 .md 文件） | 否 |
+| `--output-dir` | 指定输出目录（默认直接修改原文件） | 否 |
+
+> **提示：** 使用前请确保已安装 Python 3.6+。
+
+---
+
 ## 🔒 隐私声明
 
 本项目的提问逻辑提炼自真实毕业答辩场景的共性规律，但所有内容已彻底去主体化：不包含任何真实姓名、院校班级、真实选题或可识别个人的信息，所有示例对话均为虚构合成数据。原始素材从未、也不会包含在本仓库中。
@@ -135,7 +197,7 @@ management-thesis-defense-examiner/
 
 ```bash
 # 克隆仓库
-git clone https://github.com/greywolfy/management-thesis-defense-examiner.git
+git clone https://github.com/GZgreywolfy/management-thesis-defense-examiner.git
 cd management-thesis-defense-examiner
 
 # 安装依赖（如果有 Python 辅助脚本）
@@ -162,13 +224,15 @@ python replace_authors.py --check
 - ✅ 虚构模拟对话示例
 
 ### v1.1（计划中）
-- 🔄 新增不同学科方向子 Skill（人力资源/市场营销/战略管理等）
+- 🔄 **人力资源方向子 Skill** — 开发专门针对组织行为学、人力资源管理方向论文的子 Skill
+- 🔄 **市场营销方向子 Skill** — 开发面向消费者行为、品牌管理方向的子 Skill
 - 🔄 支持中英文双语评审模式
 - 🔄 增加更多模拟对话示例（含"踩坑"后修正的示范）
 
 ### v1.2（规划中）
 - ⏳ 引入"学生回答质量自动评估"辅助模块
 - ⏳ 提供答辩 PPT 自查清单
+- ⏳ **补充中文学位论文格式规范参考（GB/T 7714）**
 - ⏳ 构建在线交互式模拟答辩 Web 应用（基于该 Skill 包装）
 
 ### 远期展望

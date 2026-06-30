@@ -9,6 +9,10 @@
 /原始记录/
 /raw/
 
+# Python 缓存
+__pycache__/
+*.pyc
+
 # 常见系统与编辑器文件
 .DS_Store
 .vscode/
