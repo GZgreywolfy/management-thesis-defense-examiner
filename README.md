@@ -179,7 +179,7 @@ python replace_authors.py --replace "王五" --output-dir ./output
 
 ### 提交 Issue
 
-如果你有建议或发现了问题，欢迎 [提交 Issue](https://github.com/greywolfy/management-thesis-defense-examiner/issues/new)：
+如果你有建议或发现了问题，欢迎 [提交 Issue](https://github.com/GZgreywolfy/management-thesis-defense-examiner/issues/new)：
 
 1. 清晰描述你的建议或问题
 2. 如果是功能建议，请说明预期行为和使用场景

@@ -26,7 +26,7 @@ A prompt skill that turns any AI into a rigorous **thesis defense committee exam
 Clone or download this repository, then locate the `SKILL.md` file.
 
 ```bash
-git clone https://github.com/greywolfy/management-thesis-defense-examiner.git
+git clone https://github.com/GZgreywolfy/management-thesis-defense-examiner.git
 ```
 
 ### Step 2: Feed It as a System Prompt
@@ -117,7 +117,7 @@ We welcome all forms of contribution — whether it's a new idea, a bug report, 
 
 ### Submitting an Issue
 
-If you have a suggestion or found a problem, feel free to [open an Issue](https://github.com/greywolfy/management-thesis-defense-examiner/issues/new):
+If you have a suggestion or found a problem, feel free to [open an Issue](https://github.com/GZgreywolfy/management-thesis-defense-examiner/issues/new):
 
 1. Clearly describe your suggestion or problem
 2. For feature requests, explain the expected behavior and use case
@@ -135,7 +135,7 @@ If you have a suggestion or found a problem, feel free to [open an Issue](https:
 
 ```bash
 # Clone the repository
-git clone https://github.com/greywolfy/management-thesis-defense-examiner.git
+git clone https://github.com/GZgreywolfy/management-thesis-defense-examiner.git
 cd management-thesis-defense-examiner
 
 # Install dependencies (if there are Python helper scripts)
